@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block main %}
+{% block title %} Django Framework e Vue.js {% endblock %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+	<h1 class="programeFacil">Salve Quebrada DjVue</h1>
+	<center>
+	<div class="header">
+		<header>
+			<ol>
+				<li>Home</li>
+				<li>Sobre Nós</li
+>				<li>Contratos</li>
+			</ol>
+		</header>
+	<br/>
+	<ul>
+		{% for pessoa in lista %}
+			{% if pessoa.sexo == 'm' or pessoa.sexo == 'M' %}
+				<li>Olá senhor {{ pessoa.nome }}</li>
+			{% elif pessoa.sexo == 'f' or pessoa.sexo == 'F' %}
+				<li>Olá senhora {{ pessoa.nome }}</li>
+			{% else %}
+				<li>Olá {{ pessoa.nome }}</li>	
+			{% endif %}
+		{% endfor %}
+	</ul>
+	<button class="btn btn-success" onclick="salve()">Clique Aqui</button>
+	</div>
+	{% include 'footer.html'%}
+	</center>
+</body>
+</html>
+{% endblock main %}
